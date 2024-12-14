@@ -22,14 +22,12 @@ img{
 }
 
 .header{
-    
     background-color: #F7EFD8;
     
     display: flex;
     align-items: center;
     min-height: 20vh;
     padding: 100px 0;
-    margin-left : 10px;
 }
 
 .menu{
@@ -91,7 +89,7 @@ img{
     top: 100%;
     z-index: 1;
     background-color: #4E4B5076;
-    padding: 200px;
+    padding: 50px;
     min-width: 400px;
 }
 
@@ -227,7 +225,7 @@ h3{
 
 .product-content{
     display: grid;
-    grid-template-columns: repeat(4,lfr);
+    grid-template-columns: repeat(4,1fr);
     gap: 50px;
 }
 
@@ -238,7 +236,7 @@ h3{
 }
 
 .product img{
-    width: 150px;
+    width: 180px;
     height: 130px;
     margin-bottom: 10px;
 }
