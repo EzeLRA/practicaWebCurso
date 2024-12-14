@@ -4,6 +4,38 @@ function cargarEventListeners(){
 	document.getElementById("lista-1").addEventListener("click",comprarElemento);
 	document.getElementById("carrito").addEventListener("click",eliminarElemento);
 	document.getElementById("vaciar-carrito").addEventListener("click",vaciarCarrito);
+	document.getElementById("botonOpinion").addEventListener("click",confirmarEnvio);
+}
+
+function confirmarEnvio(){
+	//Lectura de datos
+	let correo = document.getElementById("apartadoCorreo").value;
+	let datos = document.getElementById("apartadoDatos").value;
+	let comentarios = document.getElementById("apartadoComentarios").value;
+	//Valores booleanos
+	let comentarioCompleto = (comentarios != "");
+	let datosCompletos = (datos != "");
+	let correoCompleto = (correo != "");
+	let informacionCompleta = ((correoCompleto)&&(datosCompletos)&&(comentarioCompleto));
+	//Auxiliar de salida
+	let avisoString = "Informacion Incompleta , porfavor intente llenar los siguientes campos:";
+
+	if(informacionCompleta == false){
+		//Alerta negativa
+		if(correoCompleto == false){
+			avisoString += "\n Su correo";
+		}
+		if(datosCompletos == false){
+			avisoString += "\n Sus datos";
+		}
+		if(comentarioCompleto == false){
+			avisoString += "\n El comentario";
+		}
+		alert(avisoString);
+	}else{
+		//Alerta de confirmacion
+		alert("Se realizo correctamente el envio , gracias por su contribucion!")
+	}
 }
 
 function comprarElemento(e){
@@ -23,7 +55,6 @@ function leerDatosElemento(elemento){
 	}
 	insertarCarrito(infoElemento);
 }
-
 
 function insertarCarrito(elemento){
 	let row = document.createElement("tr");
