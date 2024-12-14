@@ -24,12 +24,11 @@ function leerDatosElemento(elemento){
 	insertarCarrito(infoElemento);
 }
 
-//No hace la lectura de los datos del producto , revisar.
 
 function insertarCarrito(elemento){
 	let row = document.createElement("tr");
 	let lista = document.querySelector("#lista-carrito tbody");
-	row.innerHTML = '<td><img src="$(elemento.imagen)" width=100></td><td>$(elemento.titulo)</td><td>$(elemento.precio)</td><td><a href="#" class="borrar" data-id="$(elemento.id)"> X </a></td>';
+	row.innerHTML = `<td><img src="${elemento.imagen}" width=100></td><td>${elemento.titulo}</td><td>${elemento.precio}</td><td><a href="#" class="borrar" data-id="${elemento.id}"> X </a></td>`;
 	lista.appendChild(row);
 }
 
